@@ -35,7 +35,7 @@ export default function Contact() {
       .join("\n");
 
     const text = encodeURIComponent(lines);
-    window.open(`https://wa.me/573007738824?text=${text}`, "_blank");
+    window.open(`https://wa.me/573005503573?text=${text}`, "_blank");
   }
 
   const inputClasses =
