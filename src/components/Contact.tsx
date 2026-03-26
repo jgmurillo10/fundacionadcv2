@@ -125,9 +125,25 @@ export default function Contact() {
                 </svg>
               </div>
               <div>
-                <p className="font-semibold text-gray-900">Tel&eacute;fono</p>
-                <p className="text-gray-600">+57 300 773 8824</p>
-                <p className="text-gray-600">+57 300 550 3573</p>
+                <p className="font-semibold text-gray-900">Tel&eacute;fono / WhatsApp</p>
+                <div className="flex flex-col gap-1">
+                  <a
+                    href="https://wa.me/573007738824"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-green-700 transition"
+                  >
+                    +57 300 773 8824
+                  </a>
+                  <a
+                    href="https://wa.me/573005503573"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-green-700 transition"
+                  >
+                    +57 300 550 3573
+                  </a>
+                </div>
               </div>
             </div>
           </div>
