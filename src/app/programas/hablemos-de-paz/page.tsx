@@ -5,10 +5,14 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title:
-    "Hablemos de Paz y Sostenibilidad | Fundaci\u00f3n ADC",
+  title: "Hablemos de Paz y Sostenibilidad",
   description:
     "Proyecto comunitario que promueve espacios de formaci\u00f3n para la convivencia, la inclusi\u00f3n y el cuidado del medio ambiente. Desarrollado con apoyo del Ministerio del Interior.",
+  openGraph: {
+    title: "Hablemos de Paz y Sostenibilidad | Fundaci\u00f3n ADC",
+    description:
+      "Espacios de formaci\u00f3n para la convivencia, la inclusi\u00f3n y el cuidado del medio ambiente en comunidades de Girardot.",
+  },
 };
 
 const activities = [

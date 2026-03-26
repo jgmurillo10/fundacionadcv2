@@ -5,10 +5,14 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title:
-    "Ni Una Gota M\u00e1s \u2013 Programa Insignia | Fundaci\u00f3n ADC",
+  title: "Ni Una Gota M\u00e1s \u2013 Programa Insignia",
   description:
-    "Programa insignia de Fundaci\u00f3n ADC para la gesti\u00f3n responsable del aceite de cocina usado. Recolecci\u00f3n, educaci\u00f3n ambiental y transformaci\u00f3n en biocombustible.",
+    "Programa insignia de Fundaci\u00f3n ADC para la gesti\u00f3n responsable del aceite de cocina usado. Recolecci\u00f3n, educaci\u00f3n ambiental y transformaci\u00f3n en biocombustible en Girardot, Colombia.",
+  openGraph: {
+    title: "Ni Una Gota M\u00e1s \u2013 Programa Insignia | Fundaci\u00f3n ADC",
+    description:
+      "Gesti\u00f3n responsable del aceite de cocina usado: recolecci\u00f3n, educaci\u00f3n ambiental y transformaci\u00f3n en biocombustible.",
+  },
 };
 
 /* ------------------------------------------------------------------ */
