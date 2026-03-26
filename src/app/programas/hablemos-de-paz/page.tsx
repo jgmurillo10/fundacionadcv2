@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Contact from "@/components/Contact";
 
 export const metadata: Metadata = {
   title: "Hablemos de Paz y Sostenibilidad",
@@ -473,58 +474,7 @@ export default function HablemosDePazPage() {
         </div>
       </section>
 
-      {/* ─── CTA Section ─── */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-blue-700 via-blue-600 to-green-700">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2.5 text-sm font-medium text-white/90 tracking-wide mb-8">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-4 h-4"
-            >
-              <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-            </svg>
-            &Uacute;nete al cambio
-          </div>
-
-          <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6">
-            &iquest;Quieres ser parte de la transformaci&oacute;n?
-          </h2>
-          <p className="text-lg md:text-xl text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Si eres l&iacute;der comunitario, docente, representante de una instituci&oacute;n educativa u organizaci&oacute;n social, te invitamos a sumarte a este proyecto por la paz y la sostenibilidad.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/#contacto"
-              className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 font-semibold rounded-xl px-8 py-4 hover:bg-blue-50 transition shadow-lg text-base"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-                />
-              </svg>
-              Cont&aacute;ctanos
-            </Link>
-            <Link
-              href="/"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white rounded-xl px-8 py-4 hover:bg-white/10 transition text-base font-medium"
-            >
-              Conoce m&aacute;s proyectos
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Contact />
 
       <Footer />
     </>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Contact from "@/components/Contact";
 
 export const metadata: Metadata = {
   title: "Ni Una Gota M\u00e1s \u2013 Programa Insignia",
@@ -448,66 +449,7 @@ export default function NiUnaGotaMasPage() {
       </section>
 
       {/* ============================================================ */}
-      {/*  CTA                                                         */}
-      {/* ============================================================ */}
-      <section id="contacto" className="py-20 sm:py-28 px-6 bg-green-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-white rounded-3xl p-10 sm:p-16 shadow-xl border border-green-100">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-green-100 text-green-700 mb-8">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-8 h-8"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
-                />
-              </svg>
-            </div>
-
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl font-extrabold text-green-900 leading-tight mb-4">
-              &iquest;Quieres ser parte del cambio?
-            </h2>
-            <p className="text-lg text-green-900/70 leading-relaxed mb-10 max-w-2xl mx-auto">
-              Si eres un restaurante, colegio, empresa o simplemente quieres dejar de verter aceite por el desag&uuml;e, cont&aacute;ctanos. Juntos podemos proteger nuestras fuentes h&iacute;dricas.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="mailto:contacto@fundacionadc.org"
-                className="inline-flex items-center justify-center gap-2 bg-green-700 text-white font-semibold rounded-xl px-8 py-4 hover:bg-green-800 transition shadow-lg text-base"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-5 h-5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-                  />
-                </svg>
-                Escr&iacute;benos
-              </a>
-              <Link
-                href="/"
-                className="inline-flex items-center justify-center gap-2 border-2 border-green-700 text-green-700 rounded-xl px-8 py-4 hover:bg-green-50 transition text-base font-medium"
-              >
-                Conoce m&aacute;s de la fundaci&oacute;n
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Contact />
 
       <Footer />
     </>
