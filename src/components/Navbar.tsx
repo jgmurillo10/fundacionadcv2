@@ -3,15 +3,28 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 
-const NAV_LINKS = [
+interface NavLink {
+  label: string;
+  href: string;
+  children?: { label: string; href: string }[];
+}
+
+const NAV_LINKS: NavLink[] = [
   { label: "Inicio", href: "/#inicio" },
   { label: "Quienes somos", href: "/#quienes-somos" },
   { label: "Que hacemos", href: "/#que-hacemos" },
-  { label: "Programas", href: "/#programas" },
+  {
+    label: "Programas",
+    href: "/#programas",
+    children: [
+      { label: "Ni Una Gota M\u00e1s", href: "/programas/ni-una-gota-mas" },
+      { label: "Hablemos de Paz y Sostenibilidad", href: "/programas/hablemos-de-paz" },
+    ],
+  },
   { label: "Impacto", href: "/#impacto" },
   { label: "Aliados", href: "/#aliados" },
   { label: "Contacto", href: "/#contacto" },
-] as const;
+];
 
 function HamburgerIcon({ className }: { className?: string }) {
   return (
@@ -130,17 +143,45 @@ export default function Navbar() {
         {/* Desktop Navigation Links */}
         <ul className="hidden items-center gap-1 lg:flex">
           {NAV_LINKS.map((link) => (
-            <li key={link.href}>
+            <li key={link.href} className={link.children ? "relative group" : ""}>
               <a
                 href={link.href}
-                className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-300 font-[family-name:var(--font-body)] ${
+                className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-300 font-[family-name:var(--font-body)] inline-flex items-center gap-1 ${
                   scrolled
                     ? "text-green-900 hover:bg-green-50 hover:text-green-700"
                     : "text-white/90 hover:bg-white/10 hover:text-white"
                 }`}
               >
                 {link.label}
+                {link.children && (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 opacity-60">
+                    <path fillRule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
+                  </svg>
+                )}
               </a>
+              {link.children && (
+                <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  <div className={`rounded-xl shadow-lg border py-2 min-w-[240px] ${
+                    scrolled
+                      ? "bg-white border-gray-100"
+                      : "bg-green-950/95 backdrop-blur-md border-white/10"
+                  }`}>
+                    {link.children.map((child) => (
+                      <a
+                        key={child.href}
+                        href={child.href}
+                        className={`block px-4 py-2.5 text-sm font-medium transition-colors ${
+                          scrolled
+                            ? "text-green-900 hover:bg-green-50 hover:text-green-700"
+                            : "text-white/90 hover:bg-white/10 hover:text-white"
+                        }`}
+                      >
+                        {child.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
             </li>
           ))}
         </ul>
@@ -182,7 +223,7 @@ export default function Navbar() {
       <div
         id="mobile-menu"
         className={`overflow-hidden transition-all duration-300 ease-in-out lg:hidden ${
-          mobileMenuOpen ? "max-h-[28rem] opacity-100" : "max-h-0 opacity-0"
+          mobileMenuOpen ? "max-h-[36rem] opacity-100" : "max-h-0 opacity-0"
         }`}
         aria-hidden={!mobileMenuOpen}
       >
@@ -198,6 +239,22 @@ export default function Navbar() {
                 >
                   {link.label}
                 </a>
+                {link.children && (
+                  <ul className="ml-4">
+                    {link.children.map((child) => (
+                      <li key={child.href}>
+                        <a
+                          href={child.href}
+                          className="block rounded-lg px-4 py-2.5 text-sm font-medium text-green-700 transition-colors duration-200 hover:bg-green-50 font-[family-name:var(--font-body)]"
+                          onClick={handleNavClick}
+                          tabIndex={mobileMenuOpen ? 0 : -1}
+                        >
+                          {child.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
           </ul>
